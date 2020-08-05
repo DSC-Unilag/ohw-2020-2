@@ -23,34 +23,100 @@ class Hack extends StatelessWidget{
         body: ListView(
           children: <Widget>[
             Image.asset(
+              
               'images/Top-Image.jpg', 
+              
               width: 411, 
               height: 292,
               fit: BoxFit.cover,),
+              SizedBox(
+                height:5.0,
+              ),
             Container(
+              margin: EdgeInsets.symmetric(vertical:5.0, horizontal:80.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(20.0)),
                   child: Container(
-                    Padding(padding: EdgeInsets.all(10.0),),
-                    Text('General'),
                     color: Colors.green,
-                    width: 50,
-                    height:50,
+                    width: 10,
+                    height:20,
+                    child: Text('General', style: TextStyle(color: Colors.green[300], fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+                      ),
+                   
+                  ),
+                  
                   ),
 
+            Container(
+               padding: EdgeInsets.symmetric(horizontal:10.0),
+              child: 
+                Text('Open Hack Week', style: TextStyle(fontWeight: FontWeight.bold)),
+              
+            ) ,
+            Container(
+               padding: EdgeInsets.symmetric(horizontal:10.0),
+              child:
+               Text('Infographic accelerator iPad direct mailing paradigm shift hackathon lean startup equity channels partner network investor founders gen-z prototype. Ownership assets equity rockstar '),
+            ) ,
+             SizedBox(
+              height:5.0,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal:10.0),
+              child: Text('12:00pm'),
+             
+            ),
+            SizedBox(
+              height:5.0,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal:10.0),
+              child: Text('27 July to 2 August 2020'),
+             
+            ),
+             SizedBox(
+              height:5.0,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal:10.0),
+              child: Text('Slack'),
+             
+            ),
+            
+            RaisedButton(
+              onPressed: (){},
+              color: Colors.blue,
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Register To Attend', 
+                    style: TextStyle(
+                      color: Colors.white, 
+                      fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                      ),
+                  ],
+
                 ),
+              
+              ),
+              ),
+
+          ]),
 
                
               
 
             
-             ) ,
              
-          ],
+             
+      ),
            
 
-        ) ,
-      ),
-    );
+        ) ;
+      
+    
   }
 }
