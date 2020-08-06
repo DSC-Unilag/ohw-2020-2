@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class NavigationDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+
       child: ListView(
         padding: EdgeInsets.all(2.0),
         children: <Widget>[
           Center(
-
             child: Container(
-              height: 25,
-                child: Icon(Icons.code)
-            ),
+              height: 60,
+                child: Image.asset('images/dsc_logo2.jpg')),
           ),
           ListTile(
             leading: Icon(Icons.home),

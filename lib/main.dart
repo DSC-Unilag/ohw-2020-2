@@ -1,6 +1,9 @@
+import 'package:DSCUnilagApp/Pages/core_team.dart';
 import 'package:flutter/material.dart';
 
 import 'package:DSCUnilagApp/Pages/home_page.dart';
+import 'package:DSCUnilagApp/Pages/about_dsc.dart';
+import 'package:DSCUnilagApp/Pages/event_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,8 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DSC App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryIconTheme: IconThemeData(
+          color: Colors.black
+        ),
       ),
       home: MyHomePage(),
     );
