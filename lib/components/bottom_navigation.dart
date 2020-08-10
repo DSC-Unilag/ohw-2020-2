@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BottomNavigation extends StatelessWidget {
   @override
@@ -8,15 +7,26 @@ class BottomNavigation extends StatelessWidget {
     return BottomNavigationBar(
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: SvgPicture.asset('images/Home.svg'),
+          icon: GestureDetector(
+            onTap: (){
+              Navigator.pop(context);
+            },
+              child: SvgPicture.asset('images/Home-Filled.svg',)
+          ),
           title: Text('Home'),
         ),
         BottomNavigationBarItem(
-          icon: SvgPicture.asset('images/Events.svg'),
+          icon: GestureDetector(child : SvgPicture.asset('images/Events.svg'),
+          onTap: (){
+            Navigator.pushNamed(context, '/events');
+          },),
           title: Text('Events'),
         ),
         BottomNavigationBarItem(
-          icon: SvgPicture.asset('images/Core Team.svg'),
+          icon: GestureDetector(child: SvgPicture.asset('images/Core Team.svg'),
+          onTap: (){
+            Navigator.pushNamed(context, '/core team');
+          },),
           title: Text('Core Team'),
         ),
       ],
