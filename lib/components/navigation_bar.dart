@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class NavigationDrawer extends StatelessWidget {
+
+class NavigationDrawer extends StatefulWidget {
+
+  @override
+  _NavigationDrawerState createState() => _NavigationDrawerState();
+}
+
+class _NavigationDrawerState extends State<NavigationDrawer> {
+  dscWebLauncher() async{
+    if(await canLaunch('dscunilag.dev/join')){
+      await launch('dscunilag.dev/join');
+    }else{
+      throw 'Could not launch dscunilag.dev/join';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -15,22 +31,33 @@ class NavigationDrawer extends StatelessWidget {
                 child: Image.asset('images/dsc_logo2.jpg')),
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: SvgPicture.asset('images/Home-Filled.svg'),
             title: Text('Home'),
+           onTap: (){
+              Navigator.pushNamed(context, '/');
+            }
           ),
           ListTile(
-            leading: Icon(Icons.group),
+            leading: SvgPicture.asset('images/Events.svg'),
             title: Text('Events'),
+            onTap: (){
+              Navigator.pushNamed(context, '/events');
+            }
           ),
           ListTile(
-            leading: Icon(Icons.code),
+            leading: SvgPicture.asset('images/Core Team.svg'),
             title: Text('Core Team'),
+            onTap: (){
+              Navigator.pushNamed(context, '/core team');
+            }
           ),
           ListTile(
             title: Text('DSC Unilag Blog'),
+            onTap: () => dscWebLauncher(),
           ),
           ListTile(
             title: Text('Image Gallery'),
+
           ),
           ListTile(
             title: Text('OHW Team 2'),

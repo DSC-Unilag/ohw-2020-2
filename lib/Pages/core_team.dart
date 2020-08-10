@@ -3,19 +3,29 @@ import 'package:DSCUnilagApp/components/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 
-class CoreTeam extends StatelessWidget {
+class CoreTeam extends StatefulWidget {
+  @override
+  _CoreTeamState createState() => _CoreTeamState();
+}
+
+class _CoreTeamState extends State<CoreTeam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigation(),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.blue,
+        leading: FlatButton(
+          onPressed: (){
+            Navigator.pushNamed(context, '/');
+          },
+          child: Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+          ),
         ),
         title: Text('Core Team',
         style: TextStyle(
